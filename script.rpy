@@ -10,14 +10,19 @@ define k = Character("Kai")
 label start:
 
     scene cena1
+    with fade
+
+    play sound "audio/narra1.mp3"
 
     "Dois irmãos Pisquinha e Husk lutam pela liderança do clã dos lobos"
+    
 
     p "Não quero brigar com você irmão"
 
     p "Esta luta não faz sentido pra mim"
 
-    show husk
+    show husk at right
+    with dissolve
 
     h "Deixa de conversa mole Pisquinha"
 
