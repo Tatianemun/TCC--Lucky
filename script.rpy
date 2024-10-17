@@ -2,7 +2,6 @@
 define i = Character("Lily")
 define r = Character("Rose")
 define p = Character("Peter")
-define a = Character("Ravi")
 define g = Character("Gangue")
 
 # The game starts here.
@@ -100,7 +99,7 @@ label nao:
 label principal:
     scene flor
     show luckytriste at center
-    "Lucky decidiu voltar para casa, e usou a floresta como um atalho"
+    "O horário de aula acabou, então Lucky decidiu voltar para casa, e usou a floresta como um atalho"
 
 
     scene casa
@@ -148,8 +147,8 @@ label bom:
 
     r "Filho, devia ter me contado desde quando ele te incomodou da primeira vez"
     r "É inadmissível esse comportamento do Peter"
-    r "Tenho ir lá na escola falar desse problema"
-    r "Só quero que você saiba que eu vou estar sempre aqui e pode contar comigo"
+    r "Tenho que ir lá na escola falar desse problema"
+    r "Só quero que você saiba que eu vou estar sempre aqui e que pode contar comigo"
 
     hide luckytriste2
     show lucky2 at right
@@ -170,7 +169,7 @@ label ruim:
     show lucky_serio2 at right
 
     l "Não, não é"
-    l "Fica despreocupada"
+    l "Pode ficar despreocupada"
 
     hide lucky_serio2
     jump alternativo
@@ -181,12 +180,13 @@ label alternativo:
 
     l "Agora vou relaxar um pouco"
     
-    r "Que tal um passeio?"
+    r "Que tal um passeio? O dia está tão lindo"
 
     l "Pode ser"
     l "Acho que vou explorar a floresta"
+    l "Tem lugares lá que não conheço"
 
-    r "Tá bom filho, toma cuidado lá fora"
+    r "Tá bom filho, só toma cuidado lá fora"
 
     l "Ok, pode deixar"
     l "Tchau"
@@ -208,9 +208,7 @@ label alternativo:
 
     i "O que te trouxe até aqui?"
 
-    l "Vim relaxar um pouco"
-
-    l "E você?"
+    l "Vim relaxar um pouco e você?"
 
     i "Estou cuidando dos animais"
     i "Gosto de cuidar deles, dá uma paz"
@@ -251,11 +249,12 @@ label otimo:
     i "Também"
     i "Estudo de manhã, aí aproveitei essa tarde ensolarada e vim aqui"
 
-    l "Que legal! Também estudo de manhã"
+    l "Que legal! Também estudo de manhã, acho que estudamos na mesma escola"
 
-    i "Veio aproveitar esse sol também?"
+    i "Sim"
+    i "Você veio aproveitar esse sol também?"
 
-    l "Na verdade, estou aqui para esquecer os problemas"
+    l "Pra falar a verdade, estou aqui para esquecer os problemas"
     l "A vida na escola não está muito fácil"
 
     i "Ué, o que aconteceu?"
@@ -269,8 +268,7 @@ label otimo:
 
     l "Sim, o pior é que eles se sentem bem em ter esse comportamento"
 
-    i "Sim"
-    i "Você já falou isso com alguém?" 
+    i "Sim, mas você já falou isso com alguém?" 
 
     l "Sim, com a minha mãe"  
     l "Ela me ajudou e disse que vai falar com a escola"
@@ -286,7 +284,7 @@ label otimo:
     l "Tenho medo de falar e piorar as coisas"
     l "E se eles começarem a me zoar ainda mais?! E se começarem a me bater?!"
     
-    i "Sei que você tem motivo para ter medo, mas se você não contar, pode ser pior"
+    i "Sei que você tem motivo para ter medo, mas se você não contar pode ser pior"
 
     l "Sei que você está certa, mas fico pensando que se eu falar, vão me achar fraco"
 
@@ -308,14 +306,24 @@ label otimo:
     i "Com a autoestima, os comentários do Peter não vão te afetar"
 
     l "Verdade"
-    l "Às vezes, me sinto tão inseguro que acabo acreditando nas coisas ruins que ele fala de mim"
+    l "Sabe às vezes, me sinto tão inseguro que acabo acreditando nas coisas ruins que ele diz sobre mim"
 
     i "Eu sei, mas você sabe que não é"
-    i "Mas saiba que a coragem vem de dentro"
+    i "Mas saiba que a coragem vem de dentro e temos que apenas absorver coisas boas, as ruins não agregam em nada"
+
+    l "Tem razão, daqui em diante vou seguir esse conselho"
+    l "Agora tenho que ir"
+
+    i "Ok"
+    i "Tchau, até logo"
+
+    l "Tchau, até"
+
+    "Lucky ficou contente e foi para casa"
 
     hide lily2
     hide lucky2
-    jump continuacao
+    jump festa
 
 label pessimo:
 
@@ -332,7 +340,7 @@ label pessimo:
     hide lily2
     hide lucky2
 
-    "Lucky se sente um pouco perdido e a solidão o deixa mais reflexivo"
+    "Lucky se sentiu um pouco perdido e a solidão o deixou mais reflexivo"
     jump continuacao
 
 ```
@@ -343,24 +351,82 @@ Capítulo 2
 No outro dia, ocorreu a festa anual de outono da escola, uma festa onde são coroados o rei e rainha.
 Lucky estava nervoso para sua primeira festa de outono, e com a ajuda da Lily (ou por conta própria, dependendo da escolha anterior)
 ```
-label continuacao:
+label festa:
     scene festa
-    show peter2 at left
-    show lucky at right
-    "Durante a festa, Peter tenta zombar de Lucky novamente."
+    "NOVA DIA"
+    "Lucky foi para a escola como de costume, mas esse seria um grande dia, era a festa de outono que é comemorada todos os anos na escola"
+    "Lucky estava nervoso para sua primeira festa de outono, até que avistou Lily e foi conversar com ela"
 
-    hide peter2
-    hide lucky
+    show lily2 at left
+    show lucky2 at right
+
+    l "Oi Lily, que bom que você veio"
+    i "Oi Lucky, como eu poderia deixar de vir nessa festa maneira?"   
+ 
+    hide lily2
+    hide lucky2
+
+    "Ambos riram e Lily foi buscar algo para eles comerem. Peter percebeu que Lucky estava sozinho e decidiu ir lá falar com ele"
 
     show peter2 at left
     show luckytriste2 at right
 
-    p "Olha só, se não é o azarado do Lucky de novo!"
+    p "Olha só se não é o azarado do Lucky de novo!"
+    p "Não sei pra que veio, sua presença nem é importante mesmo"
 
-    l "Me deixa em paz!"
+    hide peter2
+    hide luckytriste2
+    show luckytriste
 
-    p "Tá levantando a voz pra mim?!"
-    p "O que? Resolveu ser corajoso agora?!"
+    "Lucky ficou cabisbaixo e decidiu ir embora. Quando já estava indo, Lily o viu"
+
+    hide luckytriste
+    show lily2 at left
+    show luckytriste2 at right
+
+    i "Lucky! Lucky! Pra onde você vai?!"
+
+    l "Estou indo embora"
+    l "Peter tem razão, minha presença aqui não é importante"
+
+    i "É claro que é"
+    i "E toda aquela nossa conversa sobre não acreditar no que ele diz sobre você?"
+
+    l "Sei que você tem razão, mas na hora em que ele veio me irritar, travei e a única coisa que pensei foi em fugir, então corri"
+
+    i "Lembra do que eu falei sobre a coragem? Que ela vem de dentro?"
+
+    l "Sim"
+
+    i "Então volta lá e ponha o Peter em seu lugar"
+
+    hide lily2
+    hide luckytriste2
+
+    "Lucky seguiu o conselho de Lily e foi até Peter"
+
+    show lucky_serio at left
+    show peter_rindo at right
+
+    l "Ei! Peter!"
+
+    p "Ué, o covarde fujão decidiu voltar, foi? hahahahahahahaha"
+
+    l "Respondendo a sua pergunta: não, eu não sou azarado, sou apenas um duende bondoso e corajoso"
+
+    p "Hahahahahahahaahaha"
+    p "Não tá falando sério, né?"
+    p "Essa coisa mais tosca que eu já ouvi"
+
+    l "Você só está falando isso, porque não se sente bem consigo mesmo e desconta a sua frustação nos outros"
+
+    hide lucky_serio
+    hide peter_rindo
+    "Peter ficou calado e revoltado e foi embora"
+
+
+
+
 
 
     hide peter2
