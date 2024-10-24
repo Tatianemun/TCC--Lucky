@@ -47,6 +47,7 @@ label start:
     hide peter
     hide gangue
     "Você acha que Lucky deve confrontar Peter?"
+    show lucky at left
 
 menu:
 
@@ -57,6 +58,7 @@ menu:
         jump nao
 
 label sim:
+    hide lucky
     show lucky_serio at left
     show peter at center
     show gangue at right
@@ -79,6 +81,7 @@ label sim:
     jump principal
 
 label nao:
+    hide lucky
     show lucky_tenso at left
     show peter at center
     show gangue at right
@@ -343,18 +346,10 @@ label pessimo:
     "Lucky se sentiu um pouco perdido e a solidão o deixou mais reflexivo"
     jump continuacao
 
-```
-Capítulo 2
-```
-
-```
-No outro dia, ocorreu a festa anual de outono da escola, uma festa onde são coroados o rei e rainha.
-Lucky estava nervoso para sua primeira festa de outono, e com a ajuda da Lily (ou por conta própria, dependendo da escolha anterior)
-```
 label festa:
     scene festa
-    "NOVA DIA"
-    "Lucky foi para a escola como de costume, mas esse seria um grande dia, era a festa de outono que é comemorada todos os anos na escola"
+    "NOVO DIA"
+    "Lucky foi para a escola como de costume, mas esse seria um grande dia, era a festa de outono que é comemorada todos os anos na escola junto com os pais"
     "Lucky estava nervoso para sua primeira festa de outono, até que avistou Lily e foi conversar com ela"
 
     show lily2 at left
@@ -376,7 +371,7 @@ label festa:
 
     hide peter2
     hide luckytriste2
-    show luckytriste
+    show luckytriste 
 
     "Lucky ficou cabisbaixo e decidiu ir embora. Quando já estava indo, Lily o viu"
 
@@ -403,11 +398,19 @@ label festa:
     hide lily2
     hide luckytriste2
 
-    "Lucky seguiu o conselho de Lily e foi até Peter"
+    "Lucky deve responder a Peter?"
+
+menu:
+    "Sim":
+        jump comemoracao
+
+    "Não":
+        jump festival
+
+label comemoracao:
 
     show lucky_serio at left
     show peter_rindo at right
-
     l "Ei! Peter!"
 
     p "Ué, o covarde fujão decidiu voltar, foi? hahahahahahahaha"
@@ -422,12 +425,94 @@ label festa:
 
     hide lucky_serio
     hide peter_rindo
-    "Peter ficou calado e revoltado e foi embora"
 
+    "Peter percebeu que suas provocações não estão funcionando mais, então ficou calado e revoltado e foi embora"
+    "Lily viu tudo o que tinha acontecido de longe e foi até Lucky"
 
+    show lily2 at left
+    show lucky2 at right
+    
+    i "Estou admirada com sua coragem!"
+    i "Parabéns por ter enfrentado Peter"
 
+    l "Obrigado, não teria enfrentado ele se não fosse você"
 
+    i "A verdade é que você sempre teve essa coragem, mas nunca se permitiu acessá-la"
 
+    l "Tem razão"
+
+    hide lily2
+    hide lucky2
+
+    "Rose que estava na festa conversando com os outros pais, viu Lucky e foi atrás dele"
+
+    show rose2 at left
+    show lucky2 at right
+
+    r "Oi filho, está tudo bem?"
+
+    l "Oi mãe, está sim"
+    l "A senhora não sabe o que aconteceu"
+
+    r "O que?"
+
+    l "Finalmente enfrentei o Peter e o coloquei no lugar dele, agora ele não vai mais me incomodar"
+
+    r "Que bom filho, agora você vai ter paz!"
+    
+    hide rose2
+    hide lucky2
+ 
+
+label festival:
+    "Lucky com medo, não respondeu Peter, mas Lily decidiu tomar uma atitude"
+
+    show lily2 at left 
+    show peter at right
+
+    i "Peter!"
+
+    p "O covarde chamou reforços foi? Hahahahahahahahaha"
+
+    i "Ele não é um covarde!"
+    i "Você deveria se tocar e ver que o bullying que você pratica é errado"
+    i "A real é que você desconta sua raiva nos outros em vez de tratá-la. Deveria olhar para si mesmo e procurar mudar!"
+
+    hide lily2
+    hide peter
+
+    "Lily deixou Peter irritado e foi embora para se encontrar com Lucky"
+
+    show lily2 at left
+    show lucky2 at right
+
+    l "Obrigado por ter me defendido"
+
+    i "Não foi nada, saiba que sempre estarei aqui pra te defender"
+    i "Afinal, é isso que os amigos fazem"
+
+    hide lily2
+    hide lucky2
+    show lucky at left
+    show lily at center
+    show rose at right
+
+    "Felizes, Lucky e Lily se encontram com Rose e todos curtem as festa juntos"
+
+    hide lucky
+    hide lily
+    hide rose
+    
+label continuacao:
+    "NOVO DIA"
+    "Lucky foi para a escola como de costume, mas esse seria um grande dia, era a festa de outono que é comemorada todos os anos na escola junto com os pais"
+    "Peter percebeu que Lucky estava sozinho e foi até ele"
+
+    show peter2 at left
+    show luckytriste2 at right
+
+    p "Olha só se não é o azarado de novo!"
+    p "Não sei pra que veio, sua presença nem é importante mesmo"
 
     hide peter2
     hide luckytriste2
@@ -435,41 +520,37 @@ label festa:
     "Lucky deve responder a Peter?"
 
 menu:
-
     "Sim":
-        jump confiante 
+        jump responder
 
     "Não":
-        jump silencio
+        jump ignorar
 
-label confiante:
-    show lucky at center
-    "Lucky se levanta com confiança e responde que ele não é azarado, mas sim um duende bondoso e corajoso. Os outros duendes começam a admirar sua atitude, e Peter percebe que suas provocações não estão funcionando mais"
-    jump finalfeliz
+label responder:
+    show lucky_serio at left
+    show peter at right
 
-label silencio:
-    "Lucky permanece em silêncio, mas Lily e Ravi, que estão com ele, o defendem. Peter se surpreende com a solidariedade dos amigos de Lucky e começa a perceber que está isolado em suas provocações"
-    jump finaltriste
+    l "Quer saber? Já cansei das suas brincadeiras de mal gosto, me deixa
+em paz!"
 
-label finalfeliz:
-    "Peter, tocado pela coragem e bondade de Lucky, se aproxima com sinceridade"
+    p "Ui, estou morrendo de medo hahahahahahahaha"
+    p "Fala sério? Acha mesmo que vou te deixar em paz? Nem você acredita
+nisso"
 
-    p "Desculpe por ter sido tão cruel"
+    l "Você só me irrita porque desconta sua frustração nos outros!"
+    l "Quer saber: vou embora e é melhor me deixar quieto!"
 
-    p "Eu não devia ter te tratado assim"
+    hide lucky_serio
+    hide peter
 
-    p "Me desculpe pelas minhas atitudes"
-
-    l "Tudo bem, podemos começar de novo?"
-
-    p "Claro"
-
-    "Peter, agora amigo, se junta a Lucky, Lily e Ravi. Eles brincam juntos na floresta, e Lucky sente que encontrou seu valor e seu lugar no mundo, transformando sua situação com coragem e bondade"
-
-label finaltriste:
-    "Peter continua sendo rude e Lucky percebe que não precisa de aprovação de Peter para ser feliz"
+    "Lucky decidiu ser feliz e foi curtir a festa"
+    
+label ignorar:
+    "Lucky, triste, saiu correndo de medo"
 
     
-    "Lucky, Lily e Ravi saem juntos, deixando Peter para trás. Lucky percebe que sua confiança não depende da opinião dos outros, mas sim de sua própria força interior"
 
-    return
+
+
+
+ 
