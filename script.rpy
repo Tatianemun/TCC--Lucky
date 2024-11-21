@@ -15,10 +15,6 @@ label start:
     scene flor
     with fade
 
-    show lucky at center
-
-    ""
-
     "Em um vilarejo encantado, Lucky, um pequeno duende, enfrenta dificuldades na escola devido ao bullying de Peter, um duende mais velho e maldoso."
 
     "No pátio, Lucky estava sozinho quando Peter apareceu, cercado por colegas"   
