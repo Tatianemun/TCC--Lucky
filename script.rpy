@@ -271,16 +271,7 @@ label otimo:
 
     l "Sim, o pior é que eles se sentem bem em ter esse comportamento"
 
-    i "Sim, mas você já falou isso com alguém?" 
-
-    l "Sim, com a minha mãe"  
-    l "Ela me ajudou e disse que vai falar com a escola"
-
-    i "Ah, é sempre bom ter alguém para conversar"
-
-    l "Pois é, ajuda a se livrar um pouco desse peso"
-
-    i "Mas você falou com o seus professores?"
+    i "Sim, mas você já falou com o seus professores?"
     i "É sempre bom avisar eles"
 
     l "Sei que é bom, mas não falei"
